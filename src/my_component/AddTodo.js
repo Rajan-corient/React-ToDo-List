@@ -9,16 +9,17 @@ export const AddTodo = (props) => {
     e.preventDefault();
     if (!title || !desc) {
       alert("Title or Description can not be blank");
+    } else {
+      props.addTodo(title, desc);
+      setTitle("");
+      setDesc("");
+      // adding this way does not work in react
+      // props.todos.push({
+      //   sno: ++props.todos[props.todos.length - 1].sno,
+      //   title: "todo1",
+      //   desc: "todo1 description",
+      // });
     }
-    props.addTodo(title, desc);
-    setTitle("");
-    setDesc("");
-    // adding this way does not work in react
-    // props.todos.push({
-    //   sno: ++props.todos[props.todos.length - 1].sno,
-    //   title: "todo1",
-    //   desc: "todo1 description",
-    // });
   };
 
   return (

@@ -30,11 +30,15 @@ function App() {
     // deleting this way does not work in react
     // let index = todoList.indexOf(todo);
     // todoList.splice(index, 1);
+
     setTodoList(
       todoList.filter((item) => {
         return item !== todo;
       })
     );
+
+    // localStorage.setItem() will behave differently as setTodoList() doesn't update immediately, 
+    // to overcome this issue we can use useEffect() hook.
     localStorage.setItem("toDoList", JSON.stringify(todoList));
   };
 
