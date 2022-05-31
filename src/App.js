@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Header from "./my_component/Header";
 import { AddTodo } from "./my_component/AddTodo";
 import { Todos } from "./my_component/Todos";

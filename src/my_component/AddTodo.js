@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddTodo.css";
+import "./AddTodo.scss";
 
 export const AddTodo = (props) => {
   const [title, setTitle] = useState("");
