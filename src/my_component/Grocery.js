@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
+import spinach from '../assets/spinach.jpeg'
+import banana from '../assets/banana.jpeg'
+import potato from '../assets/potato.jpeg'
+import brinjal from '../assets/brinjal.jpeg'
+ 
 
 export class Grocery extends React.Component {
 
@@ -24,9 +29,7 @@ export class Grocery extends React.Component {
                                 <Card.Body>
                                     <blockquote className="blockquote mb-0">
                                         <p>
-                                            {' '}
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                            erat a ante.{' '}
+                                           <img width={100} height={100} src={spinach} alt="Spinach" />
                                         </p>
                                         <footer className="blockquote-footer">
                                             <Button className="mt-2" variant="info">
@@ -42,11 +45,7 @@ export class Grocery extends React.Component {
                                 <Card.Header className="text-center">Potato</Card.Header>
                                 <Card.Body>
                                     <blockquote className="blockquote mb-0">
-                                        <p>
-                                            {' '}
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                            erat a ante.{' '}
-                                        </p>
+                                    <img width={100} height={100} src={potato} alt="Potato" />
                                         <footer className="blockquote-footer">
                                             <Button className="mt-2" variant="info">
                                                 Add To Cart
@@ -62,9 +61,7 @@ export class Grocery extends React.Component {
                                 <Card.Body>
                                     <blockquote className="blockquote mb-0">
                                         <p>
-                                            {' '}
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                            erat a ante.{' '}
+                                        <img width={100} height={100} src={banana} alt="Banana" />
                                         </p>
                                         <footer className="blockquote-footer">
                                             <Button className="mt-2" variant="info">
@@ -81,9 +78,8 @@ export class Grocery extends React.Component {
                                 <Card.Body>
                                     <blockquote className="blockquote mb-0">
                                         <p>
-                                            {' '}
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                            erat a ante.{' '}
+                                        <img width={100} height={100} src={brinjal} 
+                                        alt="Brinjal" />
                                         </p>
                                         <footer className="blockquote-footer">
                                             <Button className="mt-2" variant="info">
