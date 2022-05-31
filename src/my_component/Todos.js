@@ -10,7 +10,7 @@ export const Todos = (props) => {
         ? "No ToDos to display"
         : props.todos.map((item, index) => {
             return (
-              <Todo todo={item} key={item.sno} onDelete={props.onDelete} />
+              <Todo todo={item} key={`${item.sno} ${item.title}`} onDelete={props.onDelete} />
             );
           })}
     </div>

@@ -31,6 +31,11 @@ export default function Header(props) {
               <Link className="nav-link" to="/about">
                 about
               </Link>
+            </li>      
+            <li className="nav-item">
+              <Link className="nav-link" to="/grocery">
+                Grocery
+              </Link>
             </li>
           </ul>
           {props.searchbar ? (
