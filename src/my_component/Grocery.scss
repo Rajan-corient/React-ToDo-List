@@ -1,0 +1,23 @@
+$priceSize: 1rem;
+$rupeeSize: 1.25rem;
+
+
+.fa-rupee {
+    font-size: $rupeeSize !important;
+}
+
+.price {
+    font-size: $priceSize;
+}
+
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.vege-desc{
+    padding-top: 0.75rem;
+    padding-left: 1rem;
+}
