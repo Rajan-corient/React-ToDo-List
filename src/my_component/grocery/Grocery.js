@@ -67,7 +67,7 @@ export class Grocery extends React.Component {
                     <div className="row">
                         { this.state.grocerylist.length ? 
                             this.state.grocerylist.map(grocery => {
-                                return <div className="col-sm-3">
+                                return <div className="col-sm-3 mb-3">
                                     <GroceryList key={grocery.id} grocery={grocery} />
                                 </div>
                             }) : 'No Records Found' 
