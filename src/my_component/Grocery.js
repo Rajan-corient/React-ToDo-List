@@ -158,7 +158,7 @@ export class Grocery extends React.Component {
                                     <section className="mb-0">
                                         <p>
                                             <img className="centerImage" width={100} height={100} src={brinjal} alt="Brinjal" />
-                                            <div className="mt-2">
+                                            <div className="vege-desc">
                                                 <p className="" title="Brinjal">
                                                     Brinjal
                                                 </p>
