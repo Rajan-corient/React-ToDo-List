@@ -6,11 +6,10 @@ import { About } from "./my_component/About";
 import Footer from "./my_component/Footer";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Grocery } from "./my_component/Grocery";
+import { Grocery } from "./my_component/grocery/Grocery";
 
 function App() {
   let initToDoList;
-  let initGroceryList;
 
   if (localStorage.getItem("toDoList") === null) {
     initToDoList = [];
@@ -46,44 +45,12 @@ function App() {
     localStorage.setItem("toDoList", JSON.stringify(todoList));
   };
 
-  if (localStorage.getItem("groceryList") === null) {
-    initGroceryList = [];
-  } else {
-    initGroceryList = JSON.parse(localStorage.getItem("groceryList"));
-  }
-  
-  const addGrocery = (name, quantity) => {
-    const snumber = groceryList.length ? ++groceryList[groceryList.length - 1].id : 1;
-    const myItem = {
-      id: snumber,
-      name: name,
-      quantity: quantity
-    };
-    console.log(myItem);
-    setTodoList([...groceryList, myItem]);
-  };
-
-  const onDeleteGrocery = (grocery) => {
-    console.log(grocery);
-
-    setGroceryList(
-      groceryList.filter((item) => {
-        return item !== grocery;
-      })
-    );
-    localStorage.setItem("toDoList", JSON.stringify(groceryList));
-  };
 
   const [todoList, setTodoList] = useState(initToDoList);
-  const [groceryList, setGroceryList] = useState(initGroceryList)
 
   useEffect(() => {
     localStorage.setItem("toDoList", JSON.stringify(todoList));
-  }, [todoList]);  
-
-  useEffect(() => {
-    localStorage.setItem("groceryList", JSON.stringify(groceryList));
-  }, [groceryList]);
+  }, [todoList]);
 
   return (
     <div className="App">
@@ -107,7 +74,7 @@ function App() {
             <About />
           </Route>          
           <Route exact path="/grocery">
-            <Grocery title={'My Grocery List'} groceryList={groceryList}/>
+            <Grocery title={'My Grocery List'} />
           </Route>
         </Switch>
 
