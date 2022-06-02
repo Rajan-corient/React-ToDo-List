@@ -22,6 +22,7 @@ export class Grocery extends React.Component {
                     actualPricePerKg: 40,
                     discountedPricePerKg: 34,
                     weight: '1 KG',
+                    count: 0
                 },               
                 {
                     id: 2,
@@ -30,6 +31,7 @@ export class Grocery extends React.Component {
                     actualPricePerKg: 25,
                     discountedPricePerKg: 30,
                     weight: '1 KG',
+                    count: 0
                 },                
                 {
                     id: 3,
@@ -38,6 +40,7 @@ export class Grocery extends React.Component {
                     actualPricePerKg: 50,
                     discountedPricePerKg: 40,
                     weight: '1 KG',
+                    count: 0
                 },                
                 {
                     id: 4,
@@ -46,6 +49,7 @@ export class Grocery extends React.Component {
                     actualPricePerKg: 55,
                     discountedPricePerKg: 45,
                     weight: '1 KG',
+                    count: 0
                 },                
                 {
                     id: 5,
@@ -54,9 +58,30 @@ export class Grocery extends React.Component {
                     actualPricePerKg: 40,
                     discountedPricePerKg: 36,
                     weight: '1 KG',
+                    count: 0
                 }
             ]
         }
+    }
+
+    modifyCart = (type, id) => {
+        // debugger
+        const index = this.state.grocerylist.findIndex(item => item.id === id);
+        const groceryListCopy = [...this.state.grocerylist];
+        console.log(type, id, groceryListCopy);
+        if (type === 'firstAdd') {
+            groceryListCopy[index].count = 1;
+            this.setState({grocerylist: [...groceryListCopy]});
+        } else if(type === 'add'){
+            groceryListCopy[index].count =  groceryListCopy[index].count + 1;
+            this.setState({grocerylist: [...groceryListCopy]});
+        } else {
+            if (groceryListCopy[index].count > 0) {
+                groceryListCopy[index].count = groceryListCopy[index].count - 1;
+                this.setState({grocerylist: [...groceryListCopy]}); 
+            }
+        }
+        console.log(this.state.grocerylist)
     }
 
     render() {
@@ -68,7 +93,8 @@ export class Grocery extends React.Component {
                         { this.state.grocerylist.length ? 
                             this.state.grocerylist.map(grocery => {
                                 return <div className="col-sm-3 mb-3">
-                                    <GroceryList key={grocery.id} grocery={grocery} />
+                                    <GroceryList key={grocery.id} grocery={grocery}
+                                    modifyCart={this.modifyCart} />
                                 </div>
                             }) : 'No Records Found' 
                         }
