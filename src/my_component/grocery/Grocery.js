@@ -1,11 +1,10 @@
 import React from "react";
-import { GroceryList } from "./groceryList"; 
 import spinach from '../../assets/spinach.jpeg'
 import banana from '../../assets/banana.jpeg'
 import potato from '../../assets/potato.png'
 import brinjal from '../../assets/brinjal.jpeg'
 import onion from '../../assets/onion.jpg'
-
+import { GroceryList } from "./GoceryList"; 
 
 export class Grocery extends React.Component {
 
@@ -55,6 +54,24 @@ export class Grocery extends React.Component {
                     id: 5,
                     name: 'Onion',
                     img: onion,
+                    actualPricePerKg: 40,
+                    discountedPricePerKg: 36,
+                    weight: '1 KG',
+                    count: 0
+                }   ,             
+                {
+                    id: 6,
+                    name: 'Brinjal',
+                    img: brinjal,
+                    actualPricePerKg: 40,
+                    discountedPricePerKg: 36,
+                    weight: '1 KG',
+                    count: 0
+                },               
+                {
+                    id: 7,
+                    name: 'Spinach',
+                    img: spinach,
                     actualPricePerKg: 40,
                     discountedPricePerKg: 36,
                     weight: '1 KG',
