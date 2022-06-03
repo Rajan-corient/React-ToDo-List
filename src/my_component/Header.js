@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import apna_bazar_1  from '../assets/apna_bazar_1.png'
 
 export default function Header(props) {
 
@@ -13,7 +14,7 @@ export default function Header(props) {
   return (
     <nav className="navbar navbar-expand-lg" style={headerStyle}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" style={{fontSize: '22px'}}>
           {props.title}
         </Link>
         <button
