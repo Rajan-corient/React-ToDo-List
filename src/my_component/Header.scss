@@ -20,5 +20,51 @@
         margin-right: 0.5rem;
     }
 
+    li.search-group {
+        .input-group-append {
+            position: absolute;
+            right: 4px;
+
+            .btn {
+                border: 0px;
+                color: #26a541;
+            }
+        }
+    }
+
+    li.cart-item {
+        .nav-link {
+            div {
+                position: relative;
+
+                .cart-icon {
+                    .fa-shopping-cart {
+                        font-size: 21px;
+                    }
+                }
+
+                .cart-count {
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 18px;
+                    left: 7px;
+                    width: 18px;
+                    height: 19px;
+                    border: 1px solid;
+                    border-radius: 7px;
+                    text-align: center;
+                    font-size: 12px;
+                    background-color: #ff6161;
+
+                }
+
+                .cart {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+    }
+
 
 }

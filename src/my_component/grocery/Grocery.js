@@ -12,7 +12,6 @@ export class Grocery extends React.Component {
         super(props);
 
         this.state = {
-            title: 'My Grocery List',
             grocerylist: [
                 {
                     id: 1,
@@ -104,12 +103,11 @@ export class Grocery extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h5 className="text-center my-3">{this.props.title}</h5>
                 <div className="container">
-                    <div className="row">
+                    <div className="row mt-3">
                         { this.state.grocerylist.length ? 
                             this.state.grocerylist.map(grocery => {
-                                return <div className="col-sm-3 mb-3">
+                                return <div className="col-sm-3 mb-3" style={{width: '20%'}}>
                                     <GroceryList key={grocery.id} grocery={grocery}
                                     modifyCart={this.modifyCart} />
                                 </div>

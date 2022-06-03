@@ -5,7 +5,7 @@ import "./Header.scss";
 
 export default function Header(props) {
 
-  let headerStyle = {
+  const headerStyle = {
     backgroundColor: '#26a541'
   }
 
@@ -27,44 +27,50 @@ export default function Header(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 nav-ul">
+
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
             </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/grocery">
                 Grocery
-                <i className=""></i>
               </Link>
             </li>
 
-            <li className="mr-6">
-              <div className="input-group mb-3">
+            <li className="nav-item search-group">
+              <div className="input-group">
                 <input type="text" className="form-control" 
                 placeholder="Search grocery products"
                 aria-label="Recipient's username" aria-describedby="basic-addon2" 
                 style={{ width: '40rem' }}/>
                 <div className="input-group-append">
                   <button className="btn btn-outline-secondary" type="button">
-                    <i class="fa-regular fa-magnifying-glass"></i>
+                    <i className="fa fa-search"></i>
                   </button>
                 </div>
               </div>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item cart-item">
               <Link className="nav-link" to="/">
-                <span>
-                  <i className="fa-regular fa-cart-shopping"></i>
+                <div>
+                  <span className="cart-icon">
+                    <i className="fa fa-shopping-cart"></i>
                   </span>
-                <div className="cart-count">3</div>
-                <span>Cart</span>
+                  <span className="cart-count">
+                    { '3' }
+                  </span>
+                  <span className="cart">Cart</span>
+                </div>
               </Link>
             </li>
 
