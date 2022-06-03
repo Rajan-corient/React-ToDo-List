@@ -15,7 +15,7 @@ export function GroceryList({ grocery, modifyCart }) {
                             <img className="centerImage" width={100} height={100}
                                 src={grocery.img} alt="Spinach" />
                             <div className="vege-desc">
-                                <p className="" title="spinach">
+                                <p className="name" title="spinach">
                                     {grocery.name}
                                 </p>
                                 <h4>

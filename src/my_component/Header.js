@@ -6,7 +6,8 @@ import "./Header.scss";
 export default function Header(props) {
 
   const headerStyle = {
-    backgroundColor: '#26a541'
+    backgroundColor: '#26a541',
+    maxHeight: '56px'
   }
 
   return (
