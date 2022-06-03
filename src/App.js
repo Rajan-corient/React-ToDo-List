@@ -1,4 +1,9 @@
 import "./App.scss";
+import spinach from './assets/spinach.jpeg'
+import banana from './assets/banana.jpeg'
+import potato from './assets/potato.png'
+import brinjal from './assets/brinjal.jpeg'
+import onion from './assets/onion.jpg'
 import Header from "./my_component/Header";
 import { AddTodo } from "./my_component/AddTodo";
 import { Todos } from "./my_component/Todos";
@@ -10,6 +15,72 @@ import { Grocery } from "./my_component/grocery/Grocery";
 
 function App() {
   let initToDoList;
+
+  let initGroceryList = [
+    {
+        id: 1,
+        name: 'Spinach',
+        img: spinach,
+        actualPricePerKg: 40,
+        discountedPricePerKg: 34,
+        weight: '1 KG',
+        count: 0
+    },               
+    {
+        id: 2,
+        name: 'Alu/Potato',
+        img: potato,
+        actualPricePerKg: 25,
+        discountedPricePerKg: 30,
+        weight: '1 KG',
+        count: 0
+    },                
+    {
+        id: 3,
+        name: 'Banana',
+        img: banana,
+        actualPricePerKg: 50,
+        discountedPricePerKg: 40,
+        weight: '1 KG',
+        count: 0
+    },                
+    {
+        id: 4,
+        name: 'Brinjal',
+        img: brinjal,
+        actualPricePerKg: 55,
+        discountedPricePerKg: 45,
+        weight: '1 KG',
+        count: 0
+    },                
+    {
+        id: 5,
+        name: 'Onion',
+        img: onion,
+        actualPricePerKg: 40,
+        discountedPricePerKg: 36,
+        weight: '1 KG',
+        count: 0
+    }   ,             
+    {
+        id: 6,
+        name: 'Brinjal',
+        img: brinjal,
+        actualPricePerKg: 40,
+        discountedPricePerKg: 36,
+        weight: '1 KG',
+        count: 0
+    },               
+    {
+        id: 7,
+        name: 'Spinach',
+        img: spinach,
+        actualPricePerKg: 40,
+        discountedPricePerKg: 36,
+        weight: '1 KG',
+        count: 0
+    }
+  ]
 
   if (localStorage.getItem("toDoList") === null) {
     initToDoList = [];
@@ -40,7 +111,7 @@ function App() {
       })
     );
 
-    // localStorage.setItem() will behave differently as setTodoList() doesn't update immediately, 
+    // localStorage.setItem() will behave differently(like async) as setTodoList() doesn't update // immediately, 
     // to overcome this issue we can use useEffect() hook.
     localStorage.setItem("toDoList", JSON.stringify(todoList));
   };
@@ -51,6 +122,29 @@ function App() {
   useEffect(() => {
     localStorage.setItem("toDoList", JSON.stringify(todoList));
   }, [todoList]);
+
+  // Grocery functionality
+  const [groceryList, setGroceryList] = useState(initGroceryList);
+
+  const modifyCart = (type, id) => {
+    // debugger
+    const index = groceryList.findIndex(item => item.id === id);
+    const groceryListCopy = [...groceryList];
+    console.log(type, id, groceryListCopy);
+    if (type === 'firstAdd') {
+        groceryListCopy[index].count = 1;
+        setGroceryList([...groceryListCopy]);
+    } else if(type === 'add'){
+        groceryListCopy[index].count =  groceryListCopy[index].count + 1;
+        setGroceryList([...groceryListCopy]);
+    } else {
+        if (groceryListCopy[index].count > 0) {
+          groceryListCopy[index].count = groceryListCopy[index].count - 1;
+          setGroceryList([...groceryListCopy]); 
+        }
+    }
+    console.log(groceryList)
+}
 
   return (
     <div className="App">
@@ -74,7 +168,8 @@ function App() {
             <About />
           </Route>          
           <Route exact path="/grocery">
-            <Grocery title={'My Grocery List'} />
+            <Grocery title={'My Grocery List'} groceryList={groceryList} 
+            modifyCart={modifyCart} />
           </Route>
         </Switch>
 

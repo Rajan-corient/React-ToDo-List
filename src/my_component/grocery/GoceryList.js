@@ -11,7 +11,7 @@ export function GroceryList({ grocery, modifyCart }) {
                 {/* <Card.Header className="text-center">Spinach</Card.Header> */}
                 <Card.Body>
                     <section className="mb-0">
-                        <p>
+                        <div>
                             <img className="centerImage" width={100} height={100}
                                 src={grocery.img} alt="Spinach" />
                             <div className="vege-desc">
@@ -42,7 +42,7 @@ export function GroceryList({ grocery, modifyCart }) {
                                     </a>
                                 </div>
                             </div>
-                        </p>
+                        </div>
                         <footer className="add-to-cart">
                             { grocery.count === 0 ? 
                                 <div>
