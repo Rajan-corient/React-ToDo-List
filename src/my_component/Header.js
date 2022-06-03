@@ -14,7 +14,7 @@ export default function Header(props) {
     <nav className="navbar navbar-expand-lg" style={headerStyle}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          {props.title} ({props.count})
+          {props.title}
         </Link>
         <button
           className="navbar-toggler"
@@ -62,14 +62,16 @@ export default function Header(props) {
             </li>
 
             <li className="nav-item cart-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/grocery">
                 <div>
                   <span className="cart-icon">
                     <i className="fa fa-shopping-cart"></i>
                   </span>
+                  { props.count > 0 ? 
                   <span className="cart-count">
-                    { '3' }
-                  </span>
+                    { props.count }
+                  </span> : ''
+                  }
                   <span className="cart">Cart</span>
                 </div>
               </Link>

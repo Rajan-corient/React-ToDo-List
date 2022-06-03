@@ -125,6 +125,7 @@ function App() {
 
   // Grocery functionality
   const [groceryList, setGroceryList] = useState(initGroceryList);
+  const [totalCartCount, setTotalCartCount] = useState(0);
 
   const modifyCart = (type, id) => {
     // debugger
@@ -143,13 +144,20 @@ function App() {
           setGroceryList([...groceryListCopy]); 
         }
     }
-    console.log(groceryList)
-}
+
+    // console.log(groceryList);
+
+    // to get total cart count in header
+    const count = groceryList.reduce((previousValue, currentValue) => {
+      return previousValue + currentValue.count;
+    } ,0);
+    setTotalCartCount(count);
+  }
 
   return (
     <div className="App">
       <Router>
-        <Header title={"ToDo List"} count={10} searchbar={false} />
+        <Header title={"ToDo List"} count={totalCartCount} searchbar={false} />
 
         <Switch>
           <Route
