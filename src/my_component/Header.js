@@ -62,7 +62,7 @@ export default function Header(props) {
             </li>
 
             <li className="nav-item login">
-              <Link className="nav-link" to="/grocery">
+              <Link className="nav-link" to="/login">
                 Login
               </Link>
             </li>
