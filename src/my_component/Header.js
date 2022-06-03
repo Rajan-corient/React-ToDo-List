@@ -29,25 +29,25 @@ export default function Header(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 nav-ul">
 
-            <li className="nav-item">
+            <li className="nav-item home">
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item about">
               <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item grocery">
               <Link className="nav-link" to="/grocery">
                 Grocery
               </Link>
             </li>
 
-            <li className="nav-item search-group">
+            <li className="nav-item search-group mx-3">
               <div className="input-group">
                 <input type="text" className="form-control" 
                 placeholder="Search grocery products"
@@ -59,6 +59,12 @@ export default function Header(props) {
                   </button>
                 </div>
               </div>
+            </li>
+
+            <li className="nav-item login">
+              <Link className="nav-link" to="/grocery">
+                Login
+              </Link>
             </li>
 
             <li className="nav-item cart-item">

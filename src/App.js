@@ -157,7 +157,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header title={"ToDo List"} count={totalCartCount} searchbar={false} />
+        <Header title={"Apna Bazaar"} count={totalCartCount} searchbar={false} />
 
         <Switch>
           <Route
