@@ -104,10 +104,10 @@ export class Grocery extends React.Component {
         return (
             <React.Fragment>
                 <div className="container">
-                    <div className="row mt-3">
+                    <div className="row row-cols-5 mt-3">
                         { this.state.grocerylist.length ? 
                             this.state.grocerylist.map(grocery => {
-                                return <div className="col-sm-3 mb-3" style={{width: '20%'}}>
+                                return <div className="col mb-3">
                                     <GroceryList key={grocery.id} grocery={grocery}
                                     modifyCart={this.modifyCart} />
                                 </div>
