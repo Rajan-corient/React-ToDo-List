@@ -83,6 +83,7 @@ function App() {
     }
   ]
 
+  // Todos functionality
   if (localStorage.getItem("toDoList") === null) {
     initToDoList = [];
   } else {
@@ -90,7 +91,7 @@ function App() {
   }
 
   const addTodo = (title, desc) => {
-    const snumber = todoList.length ? ++todoList[todoList.length - 1].sno : 1;
+    const snumber = todoList.length ? (todoList[todoList.length - 1].sno + 1) : 1;
     const myTodo = {
       sno: snumber,
       title: title,
@@ -112,9 +113,11 @@ function App() {
       })
     );
 
-    // localStorage.setItem() will behave differently(like async) as setTodoList() doesn't update // immediately, 
-    // to overcome this issue we can use useEffect() hook.
-    localStorage.setItem("toDoList", JSON.stringify(todoList));
+     /* localStorage.setItem("toDoList") below will behave differently(like async) as setTodoList() 
+     doesn't update // immediately, 
+     to overcome this issue we can use useEffect() hook. 
+     */
+    // localStorage.setItem("toDoList", JSON.stringify(todoList));
   };
 
 
@@ -123,6 +126,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("toDoList", JSON.stringify(todoList));
   }, [todoList]);
+
 
   // Grocery functionality
   const [groceryList, setGroceryList] = useState(initGroceryList);
@@ -161,18 +165,17 @@ function App() {
         <Header title={"Apna Bazaar"} count={totalCartCount} searchbar={false} />
 
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => {
+          <Route exact path="/"
+            render={ () => {
               return (
                 <>
-                  <AddTodo todos={todoList} addTodo={addTodo} />
+                  <AddTodo todos={todoList} addTodo={addTodo} /><br/>
                   <Todos todos={todoList} onDelete={onDelete} />
                 </>
               );
-            }}
-          ></Route>
+            } }
+          > 
+          </Route>
           <Route exact path="/about">
             <About />
           </Route>          
