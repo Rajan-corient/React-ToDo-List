@@ -4,12 +4,12 @@ import banana from './assets/banana.jpeg'
 import potato from './assets/potato.png'
 import brinjal from './assets/brinjal.jpeg'
 import onion from './assets/onion.jpg'
-import Header from "./my_component/Header";
-import { AddTodo } from "./my_component/AddTodo";
-import { Todos } from "./my_component/Todos";
-import { About } from "./my_component/About";
-import { Login } from "./my_component/Login";
-import Footer from "./my_component/Footer";
+import Header from "./my_component/header/Header";
+import { AddTodo } from "./my_component/todos/AddTodo";
+import { Todos } from "./my_component/todos/Todos";
+import { About } from "./my_component/about/About";
+import { Login } from "./my_component/login/Login";
+import Footer from "./my_component/footer/Footer";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Grocery } from "./my_component/grocery/Grocery";
