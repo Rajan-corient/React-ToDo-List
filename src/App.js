@@ -19,67 +19,67 @@ function App() {
 
   let initGroceryList = [
     {
-        id: 1,
-        name: 'Spinach',
-        img: spinach,
-        actualPricePerKg: 40,
-        discountedPricePerKg: 34,
-        weight: '1 KG',
-        count: 0
+      id: 1,
+      name: 'Spinach',
+      img: spinach,
+      actualPricePerKg: 40,
+      discountedPricePerKg: 34,
+      weight: '1 KG',
+      count: 0
     },               
     {
-        id: 2,
-        name: 'Alu/Potato',
-        img: potato,
-        actualPricePerKg: 25,
-        discountedPricePerKg: 30,
-        weight: '1 KG',
-        count: 0
+      id: 2,
+      name: 'Alu/Potato',
+      img: potato,
+      actualPricePerKg: 25,
+      discountedPricePerKg: 30,
+      weight: '1 KG',
+      count: 0
     },                
     {
-        id: 3,
-        name: 'Banana',
-        img: banana,
-        actualPricePerKg: 50,
-        discountedPricePerKg: 40,
-        weight: '1 KG',
-        count: 0
+      id: 3,
+      name: 'Banana',
+      img: banana,
+      actualPricePerKg: 50,
+      discountedPricePerKg: 40,
+      weight: '1 KG',
+      count: 0
     },                
     {
-        id: 4,
-        name: 'Brinjal',
-        img: brinjal,
-        actualPricePerKg: 55,
-        discountedPricePerKg: 45,
-        weight: '1 KG',
-        count: 0
+      id: 4,
+      name: 'Brinjal',
+      img: brinjal,
+      actualPricePerKg: 55,
+      discountedPricePerKg: 45,
+      weight: '1 KG',
+      count: 0
     },                
     {
-        id: 5,
-        name: 'Onion',
-        img: onion,
-        actualPricePerKg: 40,
-        discountedPricePerKg: 36,
-        weight: '1 KG',
-        count: 0
+      id: 5,
+      name: 'Onion',
+      img: onion,
+      actualPricePerKg: 40,
+      discountedPricePerKg: 36,
+      weight: '1 KG',
+      count: 0
     }   ,             
     {
-        id: 6,
-        name: 'Brinjal',
-        img: brinjal,
-        actualPricePerKg: 40,
-        discountedPricePerKg: 36,
-        weight: '1 KG',
-        count: 0
+      id: 6,
+      name: 'Brinjal',
+      img: brinjal,
+      actualPricePerKg: 40,
+      discountedPricePerKg: 36,
+      weight: '1 KG',
+      count: 0
     },               
     {
-        id: 7,
-        name: 'Spinach',
-        img: spinach,
-        actualPricePerKg: 40,
-        discountedPricePerKg: 36,
-        weight: '1 KG',
-        count: 0
+      id: 7,
+      name: 'Spinach',
+      img: spinach,
+      actualPricePerKg: 40,
+      discountedPricePerKg: 36,
+      weight: '1 KG',
+      count: 0
     }
   ]
 
