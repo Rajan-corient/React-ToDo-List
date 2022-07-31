@@ -100,12 +100,18 @@ export class Grocery extends React.Component {
             <React.Fragment>
                 <div className="container">
                     <div className="row row-cols-5 mt-3">
-                        { this.props.groceryList.length ? 
-                            this.props.groceryList.map(grocery => {
-                                return <div className="col mb-3">
-                                    <GroceryList key={grocery.id} grocery={grocery}
-                                    modifyCart={this.props.modifyCart} />
-                                </div>
+                        { 
+                            this.props.groceryList.length ? 
+                            this.props.groceryList.map((grocery, index) => {
+                                return (
+                                    <div className="col mb-3">
+                                        <GroceryList 
+                                        key={`${grocery.id} ${index}`} 
+                                        grocery={grocery}
+                                        modifyCart={this.props.modifyCart} 
+                                        />
+                                    </div>
+                                )
                             }) : 'No Records Found' 
                         }
                     </div>

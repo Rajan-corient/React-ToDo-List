@@ -140,8 +140,8 @@ function App() {
     if (type === 'firstAdd') {
         groceryListCopy[index].count = 1;
         setGroceryList([...groceryListCopy]);
-    } else if(type === 'add'){
-        groceryListCopy[index].count =  groceryListCopy[index].count + 1;
+    } else if(type === 'add') {
+        groceryListCopy[index].count = groceryListCopy[index].count + 1;
         setGroceryList([...groceryListCopy]);
     } else {
         if (groceryListCopy[index].count > 0) {
@@ -149,13 +149,11 @@ function App() {
           setGroceryList([...groceryListCopy]); 
         }
     }
-
     // console.log(groceryList);
-
     // to get total cart count in header
     const count = groceryList.reduce((previousValue, currentValue) => {
       return previousValue + currentValue.count;
-    } ,0);
+    }, 0);
     setTotalCartCount(count);
   }
 
