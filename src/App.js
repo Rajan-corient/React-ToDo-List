@@ -11,7 +11,7 @@ import { About } from "./my_component/about/About";
 import { Login } from "./my_component/login/Login";
 import Footer from "./my_component/footer/Footer";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Grocery } from "./my_component/grocery/Grocery";
 
 function App() {
@@ -163,31 +163,34 @@ function App() {
     <div className="App">
       <Router>
         <Header title={"Apna Bazaar"} count={totalCartCount} searchbar={false} />
-
-        <Switch>
-          <Route exact path="/"
-            render={ () => {
-              return (
-                <>
-                  <AddTodo todos={todoList} addTodo={addTodo} /><br/>
-                  <Todos todos={todoList} onDelete={onDelete} />
-                </>
-              );
-            } }
+        <Routes>
+          <Route 
+          exact 
+          path="/"
+          element={
+            <>
+              <AddTodo todos={todoList} addTodo={addTodo} /><br/>
+              <Todos todos={todoList} onDelete={onDelete} />
+            </>
+          }
           > 
           </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>          
-          <Route exact path="/grocery">
-            <Grocery title={'My Grocery List'} groceryList={groceryList} 
-            modifyCart={modifyCart} />
-          </Route>          
-          <Route exact path="/login">
-            <Login/>
-          </Route>
-        </Switch>
-
+          <Route 
+          exact 
+          path="/about"
+          element={<About />} />         
+          <Route 
+          exact 
+          path="/grocery"
+          element={<Grocery title={'My Grocery List'} groceryList={groceryList} 
+          modifyCart={modifyCart} />}
+          />         
+          <Route 
+          exact 
+          path="/login" 
+          element={<Login/>}
+          />
+        </Routes>
         <Footer productName="MyTodosList.com" />
       </Router>
     </div>
