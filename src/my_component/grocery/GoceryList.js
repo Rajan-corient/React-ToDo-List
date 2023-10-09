@@ -36,7 +36,7 @@ export function GroceryList({ grocery, modifyCart }) {
                                         </b>
                                     </span>
                                 </h4>
-                                <div className="">
+                                <div className="mb-1">
                                     <a style={{ textDecoration: 'none' }} className="btn-sm btn-warning" href="#spinach">
                                         {grocery.weight}
                                     </a>

@@ -24,7 +24,7 @@ export const AddTodo = (props) => {
 
   return (
     <div className="container my-3">
-      <h3>Add a Todo</h3>
+      <h3>Add Todo</h3>
       <form className="addToDo">
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
