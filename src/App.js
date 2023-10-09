@@ -171,8 +171,7 @@ function App() {
               <Todos todos={todoList} onDelete={onDelete} />
             </>
           }
-          > 
-          </Route>
+          />
           <Route 
           exact 
           path="/about"

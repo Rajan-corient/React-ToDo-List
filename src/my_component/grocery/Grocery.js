@@ -104,7 +104,7 @@ export class Grocery extends React.Component {
                             this.props.groceryList.length ? 
                             this.props.groceryList.map((grocery, index) => {
                                 return (
-                                    <div className="col mb-3">
+                                    <div key={grocery.id} className="col mb-3">
                                         <GroceryList 
                                         key={`${grocery.id} ${index}`} 
                                         grocery={grocery}
